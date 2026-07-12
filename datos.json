@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "titulo": "Hacer tareas",
+        "descripcion": "HAcer todasl atreas",
+        "prioridad": 2,
+        "estado": 3
+    },
+    {
+        "id": 2,
+        "titulo": "Nicolas",
+        "descripcion": "asd",
+        "prioridad": "Media prioridad.",
+        "estado": "Realizada"
+    }
+]

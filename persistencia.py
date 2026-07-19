@@ -10,13 +10,13 @@ def cargar_datos():
                 lista_tareas.append(nueva_tarea)
             return lista_tareas
     except FileNotFoundError:
-        return  []
+        return lista_tareas
         
 
 def guardar_datos(lista_tareas):
     datos = []
     for tarea in lista_tareas:
-        nuevo_diccionario = Tarea.a_diccionario()
+        nuevo_diccionario = tarea.a_diccionario()
         datos.append(nuevo_diccionario)
     with open("datos.json","w") as archivo:
         json.dump(datos,archivo, indent=4)

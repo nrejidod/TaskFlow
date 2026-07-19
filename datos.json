@@ -1,16 +1,16 @@
 [
     {
         "id": 1,
-        "titulo": "Hacer tareas",
-        "descripcion": "HAcer todasl atreas",
-        "prioridad": 2,
-        "estado": 3
+        "titulo": "Probar TaskFlow",
+        "descripcion": "Probar TaskFlow Buscando errores",
+        "prioridad": "Alta importancia",
+        "estado": "Pendiente"
     },
     {
         "id": 2,
-        "titulo": "Nicolas",
-        "descripcion": "asd",
-        "prioridad": "Media prioridad.",
-        "estado": "Realizada"
+        "titulo": "Hola",
+        "descripcion": "2",
+        "prioridad": "Alta importancia",
+        "estado": "En progreso"
     }
 ]

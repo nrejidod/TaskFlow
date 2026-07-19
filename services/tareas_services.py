@@ -1,5 +1,5 @@
 from models.tarea import Tarea
-
+from persistencia import guardar_datos
 PRIORIDADES = {
     1:"Baja importancia",
     2:"Media importancia",
@@ -30,11 +30,31 @@ def crear_tarea(gestor):
 
     tarea = Tarea(id_tarea,titulo,descripcion,prioridad,estado)
     gestor.agregar_tarea(tarea)
+    try:
+        guardar_datos(gestor.lista_tareas)
+    except OSError:
+        eliminado = gestor.eliminar_tarea(id_tarea)
+        if not eliminado:
+            raise RuntimeError(
+                f"No se pudo deshacer la creacion de la tarea {id_tarea}"
+            )
+        return None
+    return tarea
+
 
 def obtener_titulo():
-    pass
+    while True:
+        titulo = input("Ingrese el titulo de la tarea: ")
+        titulo = titulo.strip()
+        if titulo == "":
+            print("Error! No has escrito el titulo de la tarea.")
+        else:    
+            return titulo
+
 def obtener_descripcion():
-    pass
+    descripcion = input("Ingrese descripción de la tarea: ")
+    descripcion = descripcion.strip()
+    return descripcion
 
 def obtener_prioridad_o_estado(diccionario,mensaje,error):
     while True:
